@@ -1,8 +1,39 @@
 <!DOCTYPE html>
 <html>
+<?php
+  $key = null;
+  $fullPhrase = array();
+  $fullPhrase['1'] = 'Woodworking Plans';
+  $fullPhrase['2'] = 'Woodworking Projects';
 
+  $singleWordSingular = array();
+  $singleWordSingular['1'] = 'Plan';
+  $singleWordSingular['2'] = 'Project';
+
+  $singleWordPlural = array();
+  $singleWordPlural['1'] = 'Plans';
+  $singleWordPlural['2'] = 'Projects';
+
+  $fullPhraseString = null;
+  if ((isset($_REQUEST['key'])) && (!empty($_REQUEST['key']))) {
+    $key= $_REQUEST['key'];
+  }
+  if ($key != null && array_key_exists($key, $fullPhrase)) {
+    $fullPhraseString = $fullPhrase[$key];
+    $singleWordSingular = $singleWordSingular[$key];
+    $singleWordPlural = $singleWordPlural[$key];
+  } else {
+    $fullPhraseString = "Woodworking Plans";
+    $singleWordSingular = "Plan";
+    $singleWordPlural = "Plans";
+  }
+
+ ?>
 <head>
-  <title>TedsWoodworking 16,000 WoodWorking Plans Review</title>
+  <title>Teds Woodworking 16,000 <?php echo $fullPhraseString ?>Review</title>
+  <meta name="description" content="If you’re looking for <?php echo $fullPhraseString ?> that come with step by step instructions, Teds Woodworking Package is the answer. Ted has got plans that will help you build bed frames, cabinets, desks, bookcases and more.
+For the woodworker looking to update an outdoor area, they can find a wide selection of plans and kits. Read our Full Review for more information on the content of Teds woodworking Package"/>
+
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
@@ -46,7 +77,7 @@
          <a href="/tedswoodworking" class="brand-logo" id="logo" title="Logo"><img src="/images/logo2.png" alt="TedsWoodworking"/> </a>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <li><a href="/" title="Download 50 Free Woodworking Plans">50 FREE WoodWorking Plans</a></li>
-           <li><a href="mailto:admin@woodtask.com" title="Contact Us">Contact Us</a></li>
+           <li><a href="/contact.php" title="Contact Us">Contact Us</a></li>
            <li><a href="#">About Us</a></li-->
            <!--li class="item-banner show-on-large"><img src="http://www.tedswoodworking.com/images/banners/banner468x60b.jpg" alt="TedsWoodworking Plans and Projects" class="responsive-img" /></li -->
          </ul>
@@ -54,8 +85,8 @@
     </nav>
     <section id="content">
         <blockquote>
-          <h1>
-            <span>Full Review of 16,000 Teds Woodworking Plans</span>
+          <h1 style="line-height: 1.2em">
+            <span><span class="text-red"><?php echo $fullPhraseString ?></span>: Review of The #1 Woodworking Online Resource </span>
           </h1>
         </blockquote>
 
@@ -72,7 +103,7 @@
           </div>
           <div class="col s12 l8">
             <p>
-              The Teds Woodworking Plan was elaborated by Ted McGrath, a highly revered figure of
+              Teds Woodworking was elaborated by Ted McGrath, a highly revered figure of
               Woodworking sector. The plan was as a result of his years of experience in Woodwork.
               He is a master of woodworking techniques, and this has made him a great woodworker
               who provides quality woodwork service. As a consequence, with a view to assisting
@@ -82,13 +113,13 @@
             <p>
               Official Site: <a title="Official Website" href="http://track.woodtask.com/tedswoodworking1">http://www.tedswoodworking.com</a>
             </p>
-            <h1>
+            <h2>
               What Teds Woodworking is about
-            </h1>
+            </h2>
             <p class="no-space">
                 <div class="right">
                   <img src="/images/ted2img2.jpg" width="150" height="150" class="responsive-img" alt="" />
-                  <img src="/images/bookshelf.jpg" alt="">
+                  <!--img src="http://woodtask.com/images/bookshelf.jpg" alt=""-->
                 </div>
                 The main goal of Teds Woodworking is to provide a platform for young woodworkers
                 who wish to become professionals and for the professionals who would like to improve
@@ -114,9 +145,9 @@
               decided to make it available to whoever wishes to benefit from it by providing the Teds
               Woodworking Plan.
             </p>
-            <h1>
+            <h2>
               The Comprehensive Teds Woodworking Plan
-            </h1>
+            </h2>
             <p>
               The Teds Woodworking Plan is undoubtedly a masterplan, due to a creative approach
               and techniques it describes. The plan presents all the indispensable techniques of a
@@ -127,9 +158,9 @@
               your expenses and raise your creativity level, at the same time. A well-detailed diagram
               which is part of the plan, helps you ensure that you do not make any mistake at work.
             </p>
-            <h1>
+            <h2>
               Teds Woodworking contains every kits and project you need
-            </h1>
+            </h2>
             <p>
               The Teds Woodworking Plan entails a detailed information about different projects and
               kits necessary to become a successful woodworker. They also serve to create a master
@@ -146,7 +177,7 @@
               on how to successfully manage, build and run a woodwork business. It describes how to
               obtain woodwork business licenses and market your products.
             </p>
-            <h1>How to use the Teds Woodworking Plan?</h1>
+            <h2>How to use the Teds Woodworking Plan?</h2>
             <p>
               The Teds Woodworking Plan is a highly detailed, although simple to use, book. It is
               aimed at all kinds of users, regardless of their level of experience. It is because it
@@ -164,13 +195,13 @@
               easy to get as its simplicity, subscribe online and download. Then, get ready to see the
               best version of yourself as a Woodworker.
             </p>
-            <h1>To sum it up: the Pros and Cons of the Teds Woodworking Plan</h1>
-            <h1>
+            <h2>To sum it up: the Pros and Cons of the Teds Woodworking Plan</h2>
+            <h2>
               The Pros And Cons
-            </h1>
-            <h1 class="teal-text">
+            </h2>
+            <h2 class="teal-text">
               The pros
-            </h1>
+            </h2>
             <p>
               <ul class="collection no-border" id="points">
                   <li class="collection-item">
@@ -212,9 +243,9 @@
                   <li class="collection-item"><div></div></li>
                 </ul>
             </p>
-            <h1 class="red-text red-darken-4">
+            <h2 class="red-text red-darken-4">
               The cons
-            </h1>
+            </h2>
             <p>
               <ul class="collection no-border" id="points">
                   <li class="collection-item">
@@ -227,9 +258,9 @@
                   </li>
                 </ul>
             </p>
-            <h1>
+            <h2>
               Teds Woodworking: The Bottom Line
-            </h1>
+            </h2>
             <p>
               Overall, there is no doubt that Teds Woodworking is a very comprehensive and detailed
               woodworking package that comes with a great amount of solutions for any kind of
@@ -282,7 +313,7 @@
     </section>
     <footer id="footer" class="white">
         <p class="center">
-          Copyright 2018 woodtask.com - All Right Reserved
+          Copyright 2018 woodtask.com - All Rights Reserved
         </p>
         <p class="center">
             <span> <a href="/terms-of-service.html">Terms of Service</a></span> | <span><a href="/privacy-policy.html">Privacy Policy</a></span>
@@ -336,20 +367,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
   <script>
-  $(document).ready(function () {
-    $('.modal').modal({preventScrolling: true});
-    $("#button-submit").removeClass("hide");
-    $("#preloader").addClass("hide");
-  });
-  $('#button-submit').click( function() {
-    $("#button-submit").addClass("hide");
-    $("#preloader").removeClass("hide");
-  } );
+    $(document).ready(function () {
+      $('.modal').modal({preventScrolling: true});
+      $("#button-submit").removeClass("hide");
+      $("#preloader").addClass("hide");
+    });
+    $('#button-submit').click( function() {
+      $("#button-submit").addClass("hide");
+      $("#preloader").removeClass("hide");
+    } );
 
-  $('#button-free').click( function() {
-    $("#button-submit").removeClass("hide");
-    $("#preloader").addClass("hide");
-  });
+    $('#button-free').click( function() {
+      $("#button-submit").removeClass("hide");
+      $("#preloader").addClass("hide");
+    });
+    /*$.get("/images/bookshelf.jpg", function(data, status){
+
+   });*/
   </script>
 </body>
 

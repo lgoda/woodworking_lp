@@ -2,11 +2,19 @@ body, body.op-custom-background {
 background-image: url(https://www.tedswoodworking.com/new/wp-content/uploads/2015/07/bg6.jpg);
 background-color: #dddddd !important;
 }
-h1 {
+h1, h2 {
   margin-top: 20px;
-  font-size: 20px;
   font-weight: bold;
 }
+
+h1 {
+  font-size: 23px;
+}
+
+h2{
+  font-size: 20px;
+}
+
 h1.title-review {
   border-left: 2px solid red;
 }
@@ -57,7 +65,7 @@ nav {
   }
 
   #banner-left {
-    margin-top: auto;
+  /*  margin-top: auto;*/
   }
 
   #banner-left .card a {

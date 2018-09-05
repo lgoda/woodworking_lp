@@ -82,7 +82,7 @@
   </section>
   <footer id="footer">
       <p class="center">
-        Copyright 2018 woodtask.com - All Right Reserved
+        Copyright 2018 woodtask.com - All Rights Reserved
       </p>
       <p class="center">
           <span> <a href="/terms-of-service.html">Terms of Service</a></span> | <span><a href="/privacy-policy.html">Privacy Policy</a></span>
