@@ -92,8 +92,8 @@ For the woodworker looking to update an outdoor area, they can find a wide selec
     <section id="content">
       <div class="row">
         <div class="col s12">
-          <?php if ($key='success') { ?>
-          <div class="card-panel green lighten-4 green-text text-darken-4"><b>Thanl You!</b> We will reply as soon as possible.</div>
+          <?php if ($key==='success') { ?>
+          <div class="card-panel green lighten-4 green-text text-darken-4"><b>Thank You!</b> We will reply as soon as possible.</div>
         <?php } ?>
           <div class="card-panel">
             <h4>Contact Us</h4>
@@ -132,7 +132,7 @@ For the woodworker looking to update an outdoor area, they can find a wide selec
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-
+  
 </body>
 
 </html>

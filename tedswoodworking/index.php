@@ -5,14 +5,17 @@
   $fullPhrase = array();
   $fullPhrase['1'] = 'Woodworking Plans';
   $fullPhrase['2'] = 'Woodworking Projects';
+  $fullPhrase['3'] = 'Teds Woodworking';
 
   $singleWordSingular = array();
   $singleWordSingular['1'] = 'Plan';
   $singleWordSingular['2'] = 'Project';
+  $singleWordSingular['3'] = 'Plan';
 
   $singleWordPlural = array();
   $singleWordPlural['1'] = 'Plans';
   $singleWordPlural['2'] = 'Projects';
+  $singleWordPlural['3'] = 'Plans';
 
   $fullPhraseString = null;
   if ((isset($_REQUEST['key'])) && (!empty($_REQUEST['key']))) {
@@ -385,6 +388,7 @@ For the woodworker looking to update an outdoor area, they can find a wide selec
 
    });*/
   </script>
+  
 </body>
 
 </html>

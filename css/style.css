@@ -51,8 +51,8 @@ ul.collection.landing {
 }
 
 #arrow-download {
-  padding-left: 120px;
-padding-top: 14px;
+  display: flex;
+  justify-content: center;
 }
 
 /*#arrow {
@@ -66,14 +66,15 @@ padding-top: 14px;
 }
 
 #img-plans {
-  padding-left: 47px;
-    padding-top: 134px;
+  /*padding-left: 47px;
+    padding-top: 134px;*/
 }
 
 /*#img-container {
-  width: 50%;
-
-}*/
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}*
 
 #plan-image{
   width: 293px;
@@ -157,4 +158,27 @@ p.no-space {
     margin-bottom: 0em;
     margin-left: 0;
     margin-right: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-bottom {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
