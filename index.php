@@ -102,7 +102,7 @@
               <li class="collection-item"><i class="material-icons left green-text text-accent-3">check_circle</i> Completely FREE. Just enter your email below</li>
               <li class="collection-item"><div></div></li>
             </ul>
-            <a class="waves-effect waves-light btn btn-large modal-trigger" href="#signup-modal" id="button-free">Get Your FREE <span class="uppercase"><?php echo $singleWordPlural ?></span> Now</a>
+            <a onclick="openOptIn()" class="waves-effect waves-light btn btn-large modal-trigger" href="#signup-modal" id="button-free">Get Your FREE <span class="uppercase"><?php echo $singleWordPlural ?></span> Now</a>
           </div>
         </div>
       </div>
@@ -124,7 +124,7 @@
     <div class="center" id="text-divider">
       <p>Your 50 FREE <span class="lowercase"><?php $fullPhraseString ?></span> will be sent to the email address you provide.</p>
     </div>
-     <form action="post.php" method="post">
+     <form action="post.php" method="post" id="signUpForm">
        <div class="input-field">
          <input type="text" id="name" name="name">
          <label for="name">Name</label>
@@ -134,7 +134,7 @@
          <span class="helper-text" data-error="Email address invalid" data-success=""></span>
          <label for="email">Email</label>
        </div>
-       <button  type="submit" class="waves-effect waves-light btn btn-large modal-trigger" id="button-submit">Send me My FREE <span class="uppercase"><?php echo $singleWordPlural ?></span> Now</button>
+       <button onclick="signUpNewsletter()" type="submit" class="waves-effect waves-light btn btn-large modal-trigger" id="button-submit">Send me My FREE <span class="uppercase"><?php echo $singleWordPlural ?></span> Now</button>
         <div class="center hide" id="preloader">
          <div class="preloader-wrapper small active">
            <div class="spinner-layer spinner-green-only">
@@ -167,6 +167,12 @@
       $('.modal').modal({preventScrolling: true});
       $("#button-submit").removeClass("hide");
       $("#preloader").addClass("hide");
+      // Prevent form submit if any entrees are missing
+      $('form').submit(function(e){
+        e.preventDefault();
+        signUpNewsletter();
+        this.submit();
+      });
     });
 
     $('#button-submit').click( function() {
@@ -178,8 +184,21 @@
       $("#button-submit").removeClass("hide");
       $("#preloader").addClass("hide");
     });
+    function signUpNewsletter() {
+			window.uetq = window.uetq || []; window.uetq.push({ 'ec': 'OptIn', 'ea': 'SignUp', 'el': 'SignUp', 'ev': 1 });
+      console.log('Sign Up Newsletter');
+
+		}
+    function openOptIn() {
+			window.uetq = window.uetq || []; window.uetq.push({ 'ec': 'OpenOptIn', 'ea': 'OpenOptIn', 'el': 'OpenOptIn', 'ev': 1 });
+      console.log('Open Opt In');
+		}
+
   </script>
-  
+
+  <script>
+  (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"26017377"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+  </script>
 </body>
 
 </html>
