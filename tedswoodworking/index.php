@@ -122,7 +122,6 @@ For the woodworker looking to update an outdoor area, they can find a wide selec
             <p class="no-space">
                 <div class="right">
                   <img src="/images/ted2img2.jpg" width="150" height="150" class="responsive-img" alt="" />
-                  <!--img src="http://woodtask.com/images/bookshelf.jpg" alt=""-->
                 </div>
                 The main goal of Teds Woodworking is to provide a platform for young woodworkers
                 who wish to become professionals and for the professionals who would like to improve
@@ -368,7 +367,7 @@ For the woodworker looking to update an outdoor area, they can find a wide selec
   <!--JavaScript at end of body for optimized loading-->
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
+  <script src="/js/carousel.js"></script>
   <script>
     $(document).ready(function () {
       $('.modal').modal({preventScrolling: true});
@@ -384,9 +383,7 @@ For the woodworker looking to update an outdoor area, they can find a wide selec
       $("#button-submit").removeClass("hide");
       $("#preloader").addClass("hide");
     });
-    /*$.get("/images/bookshelf.jpg", function(data, status){
 
-   });*/
   </script>
   <script>
     (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"26017377"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");

@@ -2,6 +2,12 @@
 <html>
   <?php
       $key = null;
+      $tid = 'none';
+
+      if ((isset($_REQUEST['tid'])) && (!empty($_REQUEST['tid']))) {
+        $tid= $_REQUEST['tid'];
+      }
+
       $fullPhrase = array();
       $fullPhrase['1'] = 'Woodworking Plans';
       $fullPhrase['2'] = 'Woodworking Projects';
@@ -29,7 +35,7 @@
       }
     ?>
 <head>
-  <title>Get 50 Free <?php echo $fullPhraseString ?>  | WoodTask</title>
+  <title>Get 50 Free <?php echo $fullPhraseString ?>  For a Variety Of Projects</title>
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
@@ -83,7 +89,6 @@
                   <span id="download-now"><i class="material-icons left blue-text text-accent-3">cloud_download</i>DOWNLOAD NOW</span>
                   <div id="arrow-download">
                     <img src="/images/arrow.png" class="responsive-img" alt="" id="arrow">
-                    <img src="/images/bookshelf.jpg" alt="">
                   </div>
                 </div>
             </div>
@@ -122,9 +127,10 @@
        <img src="/images/butcher-block-plans.jpg" alt="" class="responsive-img" id="plan-image">
     </div>
     <div class="center" id="text-divider">
-      <p>Your 50 FREE <span class="lowercase"><?php $fullPhraseString ?></span> will be sent to the email address you provide.</p>
+      <p>Your 50 FREE <span class="lowercase"><?php echo $singleWordPlural ?></span> will be sent to the email address you provide.</p>
     </div>
      <form action="post.php" method="post" id="signUpForm">
+       <input type="hidden" name="tid" value="<?php echo $tid ?>">
        <div class="input-field">
          <input type="text" id="name" name="name">
          <label for="name">Name</label>
@@ -134,7 +140,7 @@
          <span class="helper-text" data-error="Email address invalid" data-success=""></span>
          <label for="email">Email</label>
        </div>
-       <button onclick="signUpNewsletter()" type="submit" class="waves-effect waves-light btn btn-large modal-trigger" id="button-submit">Send me My FREE <span class="uppercase"><?php echo $singleWordPlural ?></span> Now</button>
+       <button  type="submit" class="waves-effect waves-light btn btn-large modal-trigger" id="button-submit">Send me My FREE <span class="uppercase"><?php echo $singleWordPlural ?></span> Now</button>
         <div class="center hide" id="preloader">
          <div class="preloader-wrapper small active">
            <div class="spinner-layer spinner-green-only">
@@ -161,7 +167,7 @@
   <!--JavaScript at end of body for optimized loading-->
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
+  <script src="/js/carousel.js"></script>
   <script>
     $(document).ready(function () {
       $('.modal').modal({preventScrolling: true});
@@ -186,12 +192,10 @@
     });
     function signUpNewsletter() {
 			window.uetq = window.uetq || []; window.uetq.push({ 'ec': 'OptIn', 'ea': 'SignUp', 'el': 'SignUp', 'ev': 1 });
-      console.log('Sign Up Newsletter');
 
 		}
     function openOptIn() {
 			window.uetq = window.uetq || []; window.uetq.push({ 'ec': 'OpenOptIn', 'ea': 'OpenOptIn', 'el': 'OpenOptIn', 'ev': 1 });
-      console.log('Open Opt In');
 		}
 
   </script>

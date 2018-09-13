@@ -1,8 +1,20 @@
 <html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <style media="screen">
+    .add-height {
+      height: 900px;
+
+    }
+
+    .centered {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
 <body>
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
 <?php
 function getRealUserIp(){
     switch(true){
@@ -11,6 +23,12 @@ function getRealUserIp(){
       case (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) : return $_SERVER['HTTP_X_FORWARDED_FOR'];
       default : return $_SERVER['REMOTE_ADDR'];
     }
+ }
+
+ $tid = 'none';
+
+ if ((isset($_REQUEST['tid'])) && (!empty($_REQUEST['tid']))) {
+   $tid= $_REQUEST['tid'];
  }
 
 $ip = getRealUserIp();
@@ -28,7 +46,14 @@ $response = curl_exec($ch);
 curl_close($ch);
 $response = json_decode($response);
 $city  = $response->city; //You can get all the details like longitude,latitude from the $response .
+if ($city === null) {
+  $city = 'Madrid';
+}
 $country = $response->country_name;
+
+if ($country === null) {
+  $country = 'Spain';
+}
 //API Url
 $url = 'https://api.getresponse.com/v3/contacts';
 
@@ -54,7 +79,7 @@ $jsonData = array(
       ),
       array(
         'customFieldId' => '1tQMF',
-        'value' => array('none')
+        'value' => array($tid)
       )
     )
 );
@@ -75,19 +100,45 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
     'X-Auth-Token: api-key 58494894c4e87db9f0748ee7ff3584aa'
 );
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 
 //Set the content type to application/json
 //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
 //Execute the request
 $result = curl_exec($ch);
-echo $jsonDataEncoded;
+/*echo $jsonDataEncoded;
 echo $result;
 echo $ip;
 echo $city;
 echo $country;
-header("Location: http://track.woodtask.com/signup");
-exit;
+header("Location: http://track.woodtask.com/signup");*/
+//exit;
 ?>
+
+<div class="centered">
+  <div class="add-height valign-wrapper">
+    <div class="preloader-wrapper big active">
+         <div class="spinner-layer spinner-blue-only">
+           <div class="circle-clipper left">
+             <div class="circle"></div>
+           </div><div class="gap-patch">
+             <div class="circle"></div>
+           </div><div class="circle-clipper right">
+             <div class="circle"></div>
+           </div>
+         </div>
+     </div>
+     <br>
+   </div>
+ </div>
 </body>
 </html>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+  // similar behavior as an HTTP redirect
+  $(document).ready(function () {
+    window.location.href= 'http://track.woodtask.com/signup'; ;
+  });
+</script>
